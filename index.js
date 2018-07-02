@@ -5,7 +5,6 @@ const {app, BrowserWindow} = require('electron')
   let win
 
   function createWindow () {
-    // Create the browser window.
     win = new BrowserWindow({width: 900, height: 700, autoHideMenuBar: true})
 
     // and load the index.html of the app.
