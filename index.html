@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width">
         <link type="text/css" href="./style.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700" rel="stylesheet">
-        <!-- <script src="./script.js" async></script> -->
         <title>Game of Death: Design View</title>
     </head>
     <body>
@@ -18,24 +17,6 @@
         </div>
         <div id="designCode">
         </div>
-        <script>
-            grid = document.getElementById('designGrid');
-            for (var i = 0; i < 216; i++) {
-                temp = document.createElement('div');
-                temp.className = 'gridCell gridCellOff';
-                temp.onclick = function () {
-                    counter = document.getElementById('weightCounter');
-                    weight = Number(counter.textContent);
-                    if (this.classList.contains('gridCellOff')) {
-                        this.className = 'gridCell gridCellOn';
-                        counter.textContent = ++weight;
-                    } else {
-                        this.className = 'gridCell gridCellOff';
-                        counter.textContent = --weight;
-                    }
-                };
-                grid.appendChild(temp);
-            }
-        </script>
+        <script src="./script.js"></script>
     </body>
 </html>
