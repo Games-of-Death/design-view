@@ -1,0 +1,60 @@
+html {
+    height: 100%;
+}
+
+body {
+    border: 5px solid #8E8E8E;
+    box-sizing: border-box;
+    display: grid;
+    grid-template: 400px auto / auto 645px;
+    height: 100%;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+}
+
+body > div {
+    padding: 5px;
+    background-color: #ECECEC;
+}
+
+#shapesPane {
+    border-right: 5px solid #8E8E8E;
+    grid-area: 1 / 1 / span 2 / span 1;
+}
+
+#designGrid {
+    border-bottom: 5px solid #8E8E8E;
+    display: grid;
+    grid-area: 1 / 2 / span 1 / span 1;
+    grid-template: repeat(12, 1fr) / repeat(18, 1fr);
+    padding: 0;
+}
+
+#weight {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 1);
+    border: 2px solid black;
+    padding: 4px;
+}
+
+.gridCell {
+    border: 1px solid rgba(120, 120, 120, 0.8);
+}
+
+.gridCellOff {
+    background-color: white;
+}
+
+.gridCellOn {
+    background-color: rgba(184, 184, 184, 0.9);
+}
+
+#designCode {
+    grid-area: 2 / 2 / span 1 / span 1;
+}
