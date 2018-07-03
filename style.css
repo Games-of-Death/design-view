@@ -19,12 +19,12 @@ body > div {
 }
 
 #shapesPane {
-    border-right: 5px solid #8E8E8E;
+    border-right: 3px solid #8E8E8E;
     grid-area: 1 / 1 / span 2 / span 1;
 }
 
 #designGrid {
-    border-bottom: 5px solid #8E8E8E;
+    border-bottom: 3px solid #8E8E8E;
     display: grid;
     grid-area: 1 / 2 / span 1 / span 1;
     grid-template: repeat(12, 1fr) / repeat(18, 1fr);
@@ -46,9 +46,6 @@ body > div {
 
 .gridCell {
     border: 1px solid rgba(120, 120, 120, 0.8);
-}
-
-.gridCellOff {
     background-color: white;
 }
 
