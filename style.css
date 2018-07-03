@@ -10,7 +10,7 @@ body {
     height: 100%;
     margin: 0;
     font-family: 'Noto Sans', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 body > div {
@@ -39,8 +39,9 @@ body > div {
     display: flex;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 1);
-    border: 2px solid black;
+    border: 2px solid #8E8E8E;
     padding: 4px;
+    font-size: 14px;
 }
 
 .gridCell {
@@ -55,6 +56,30 @@ body > div {
     background-color: rgba(184, 184, 184, 0.9);
 }
 
-#designCode {
+#designControls {
     grid-area: 2 / 2 / span 1 / span 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid #8E8E8E;
+    background-color: #ffffff;
+    font-size: 12px;
+    margin: 0 1px;
+}
+
+button:hover {
+    background-color: #f2f2f2;
+}
+
+button:focus {
+    outline: none;
+}
+
+.clickedButton {
+    background-color: #cccccc !important;
 }

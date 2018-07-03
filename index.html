@@ -5,17 +5,25 @@
         <meta name="viewport" content="width=device-width">
         <link type="text/css" href="./style.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700" rel="stylesheet">
-        <title>Game of Death: Design View</title>
+        <title>Design View: Untitled</title>
     </head>
     <body>
         <div id="shapesPane">
         </div>
         <div id="designGrid">
             <div id="weight">
-                Weight: <div id="weightCounter">0</div>
+                Weight: <span id="weightCounter">0</span>
             </div>
         </div>
-        <div id="designCode">
+        <div id="designControls">
+            <div id="fileControls">
+                <button id="attachButton">Attach code...</button>
+                <button id="openButton">Open code</button>
+            </div>
+            <div id="editorControls">
+                <button id="clearButton">Clear</button>
+                <button id="saveButton">Save</button>
+            </div>
         </div>
         <script src="./script.js"></script>
     </body>
