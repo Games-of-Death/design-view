@@ -1,15 +1,27 @@
 {
-  "name": "nodejs-trial",
+  "name": "design-view",
   "version": "0.0.1",
-  "description": "Trying out Node.js and Electron",
+  "description": "The design view for Games of Death.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
   },
-  "author": "shardulc",
+  "contributors": [
+      {"name": "shardulc", "email": "shardul.chiplunkar@gmail.com"},
+      {"name": "mjuvekar7", "email": "mjuvekar7@gmail.com"}
+  ],
   "license": "MIT",
   "devDependencies": {
     "electron": "^2.0.3"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Games-of-Death/design-view.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Games-of-Death/design-view/issues"
+  },
+  "homepage": "https://github.com/Games-of-Death/design-view#readme"
 }
