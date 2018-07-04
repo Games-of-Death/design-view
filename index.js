@@ -6,7 +6,7 @@ const {app, BrowserWindow} = require('electron')
 
   function createWindow () {
     // Create the browser window.
-    win = new BrowserWindow({width: 780, height: 468, autoHideMenuBar: true, resizable: false})
+    win = new BrowserWindow({width: 780, height: 444, useContentSize: true, autoHideMenuBar: true, resizable: false})
 
     // and load the index.html of the app.
     win.loadFile('index.html')
