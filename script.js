@@ -1,6 +1,6 @@
 function toggleGridCell() {
-    counter = document.getElementById('weightCounter');
-    weight = Number(counter.textContent);
+    var counter = document.getElementById('weightCounter');
+    var weight = Number(counter.textContent);
     if (this.classList.contains('gridCellOn')) {
         this.classList.remove('gridCellOn');
         counter.textContent = --weight;
@@ -10,33 +10,40 @@ function toggleGridCell() {
     }
 }
 
-function styleClickedButton() {
-    this.className = 'clickedButton';
-    window.setTimeout(function (sender) { sender.className = ''; }, 85, this);
+function styleClickedButton(button) {
+    button.classList.add('clickedButton');
+    window.setTimeout(function (button) { button.classList.remove('clickedButton'); }, 85, button);
 }
 
-grid = document.getElementById('designGrid');
-for (var i = 0; i < 12; i++) {
-    for (var j = 0; j < 18; j++) {
-        temp = document.createElement('div');
+var grid = document.getElementById('designGrid');
+for (let i = 0; i < 12; i++) {
+    for (let j = 0; j < 18; j++) {
+        let temp = document.createElement('div');
         temp.className = 'gridCell';
-        temp.setAttribute('data-row', i);
-        temp.setAttribute('data-col', j);
+        temp.setAttribute('id', i + '-' + j);
         temp.onclick = toggleGridCell;
         grid.appendChild(temp);
     }
 }
 
-buttons = document.getElementsByTagName('button');
-for (var i = 0; i < buttons.length; i++) {
-    buttons[i].onclick = styleClickedButton;
-}
+// TODO Add call to styleClickedButton() in each click handler
 
-clearButton = document.getElementById('clearButton');
-clearButton.onclick = function () {
-    cells = [].slice.call(document.getElementsByClassName('gridCellOn'));
-    for (var i = 0; i < cells.length; i++) {
+function clearGrid(button) {
+    styleClickedButton(button);
+    var cells = [].slice.call(document.getElementsByClassName('gridCellOn'));
+    for (let i = 0; i < cells.length; i++) {
         cells[i].classList.remove('gridCellOn');
     }
     document.getElementById('weightCounter').textContent = '0';
+}
+
+function saveShape(button) {
+    styleClickedButton(button);
+    shapeCells = [];
+    for (var i = 0; i < 12; i++) {
+        shapeCells.push([]);
+        for (var j = 0; j < 18; j++) {
+            shapeCells[i].push(document.getElementById(i + '-' + j).classList.contains('gridCellOn') ? 1 : 0);
+        }
+    }
 }
