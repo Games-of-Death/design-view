@@ -26,10 +26,9 @@ for (let i = 0; i < 12; i++) {
     }
 }
 
-// TODO Add call to styleClickedButton() in each click handler
+// TODO Add call to styleClickedButton() in each html onclick
 
-function clearGrid(button) {
-    styleClickedButton(button);
+function clearGrid() {
     var cells = [].slice.call(document.getElementsByClassName('gridCellOn'));
     for (let i = 0; i < cells.length; i++) {
         cells[i].classList.remove('gridCellOn');
@@ -37,8 +36,7 @@ function clearGrid(button) {
     document.getElementById('weightCounter').textContent = '0';
 }
 
-function saveShape(button) {
-    styleClickedButton(button);
+function saveShape() {
     shapeCells = [];
     for (var i = 0; i < 12; i++) {
         shapeCells.push([]);
