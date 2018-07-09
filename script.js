@@ -1,3 +1,5 @@
+const {ipcRenderer} = require('electron');
+
 function toggleGridCell() {
     var counter = document.getElementById('weightCounter');
     var weight = Number(counter.textContent);
@@ -12,7 +14,7 @@ function toggleGridCell() {
 
 function styleClickedButton(button) {
     button.classList.add('clickedButton');
-    window.setTimeout(function (button) { button.classList.remove('clickedButton'); }, 85, button);
+    window.setTimeout((button) => { button.classList.remove('clickedButton'); }, 85, button);
 }
 
 var grid = document.getElementById('designGrid');
@@ -44,4 +46,9 @@ function saveShape() {
             shapeCells[i].push(document.getElementById(i + '-' + j).classList.contains('gridCellOn') ? 1 : 0);
         }
     }
+    shape = {
+        'cells': shapeCells,
+        'name': 'unTitLEd'
+    };
+    ipcRenderer.sendSync('save-request', shape);
 }
