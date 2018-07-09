@@ -67,6 +67,7 @@ button {
     background-color: #FFFFFF;
     font-size: 12px;
     margin: 0 1px;
+    padding-top: 3px;
 }
 
 button:hover {
