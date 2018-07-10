@@ -23,6 +23,14 @@ app.on('activate', () => {
     }
 });
 
-ipcMain.on('save-request', (event, arg) => {
-    fs.writeFile(dialog.showSaveDialog(win), JSON.stringify(arg), (err) => { if (err) throw err; });
+ipcMain.on('save-request', (event, shape) => {
+    if (!('savePath' in shape)) {
+        let options = {
+            'filters': [{'name': 'Shape files', 'extensions': ['shp']}],
+            'defaultPath': app.getPath('home')
+        };
+        shape['savePath'] = dialog.showSaveDialog(win, options);
+    }
+    fs.writeFile(shape['savePath'], JSON.stringify(shape), (err) => { if (err) throw err; });
+    event.returnValue = shape['savePath'];
 });

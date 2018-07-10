@@ -1,5 +1,7 @@
 const {ipcRenderer} = require('electron');
 
+let currentShape = {};
+
 function toggleGridCell() {
     var counter = document.getElementById('weightCounter');
     var weight = Number(counter.textContent);
@@ -46,9 +48,11 @@ function saveShape() {
             shapeCells[i].push(document.getElementById(i + '-' + j).classList.contains('gridCellOn') ? 1 : 0);
         }
     }
-    shape = {
-        'cells': shapeCells,
-        'name': 'unTitLEd'
-    };
-    ipcRenderer.sendSync('save-request', shape);
+    currentShape['cells'] = shapeCells;
+    var savePath = ipcRenderer.sendSync('save-request', currentShape);
+    if (!('savePath' in currentShape)) {
+        currentShape['savePath'] = savePath;
+        currentShape['name'] = savePath.split('/').slice(-1)[0];
+    }
+    document.title = 'Design View: ' + currentShape['name'];
 }
