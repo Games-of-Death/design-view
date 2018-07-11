@@ -17,11 +17,11 @@
         </div>
         <div id="designControls">
             <div id="fileControls">
-                <button id="attachButton">Attach code...</button>
-                <button id="openButton">Open code</button>
+                <button onclick="styleClickedButton(this); attachCode">Attach code...</button>
+                <button onclick="styleClickedButton(this)">Open code</button>
             </div>
             <div id="editorControls">
-                <button id="clearButton" onclick="styleClickedButton(this); clearGrid()">Clear</button>
+                <button onclick="styleClickedButton(this); clearGrid()">Clear</button>
                 <button id="saveButton" onclick="styleClickedButton(this); saveShape()">Save</button>
             </div>
         </div>

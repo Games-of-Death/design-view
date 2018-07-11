@@ -78,6 +78,10 @@ button:focus {
     outline: none;
 }
 
+button:disabled {
+    background-color: #FFFFFF;
+}
+
 .clickedButton {
     background-color: #CCCCCC !important;
 }

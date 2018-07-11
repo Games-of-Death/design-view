@@ -34,3 +34,24 @@ ipcMain.on('save-request', (event, shape) => {
     fs.writeFile(shape['savePath'], JSON.stringify(shape), (err) => { if (err) throw err; });
     event.returnValue = shape['savePath'];
 });
+
+ipcMain.on('attach-request', (event, currentCode) => {
+    if (currentCode !== null) {
+        let options = {
+            'type': 'info',
+            'buttons': ['Cancel', 'Replace'],
+            'title': 'Code already attached',
+            'message': 'This shape already has code attached to it. Do you want to replace it with different code?'
+        }
+        if (dialog.showMessageBox(win, options) === 0) {
+            event.returnValue = currentCode;
+            return;
+        }
+    }
+    let options = {
+        'filters': [{'name': 'Python code', 'extensions': ['py']}],
+        'defaultPath': app.getPath('home')
+    };
+    let selected = dialog.showOpenDialog(win, options);
+    event.returnValue = selected ? selected[0] : null;
+});
